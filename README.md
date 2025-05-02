@@ -28,19 +28,48 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Initialize the shift register to a known state (e.g., all zeros).
+    2.Input a bit serially into the shift register.
+    3.Shift the contents of the register one position to the right (or left).
+    4.Output the shifted bit from the last stage of the register.
+    5.Repeat steps 2-4 for each bit you want to input and shift
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+Program for flipflops and verify its truth table in quartus using Verilog programming.
 
-Developed by: RegisterNumber:
-*/
+    module Verilog1(clk, sin, q);
+    input clk;
+    input sin;
+    output [3:0] q;
+    reg [3:0] q;
+    always @(posedge clk)
+    begin
+    q[0] <= sin;
+    q[1] <= q[0];
+    q[2] <= q[1];
+    q[3] <= q[2];
+    end
+    endmodule
+```
+Developed by: AMIRTHA VARSHINI M
 
-**RTL LOGIC UP COUNTER**
+RegisterNumber:212224230017
 
-**TIMING DIAGRAM FOR IP COUNTER**
+```
 
-**TRUTH TABLE**
+**RTL LOGIC FOR SISO Shift Register**
+
+![exp10 rtl](https://github.com/user-attachments/assets/35a6590e-342e-4bc9-94c3-38e87c311d65)
+
+
+**TIMING DIGRAMS FOR SISO Shift Register**
+
+![WhatsApp Image 2024-12-14 at 21 43 22_940555cd](https://github.com/user-attachments/assets/06ec21aa-304b-431c-8cf3-a51bb75cd44d)
+
 
 **RESULTS**
+
+Thus the SISO Shift Register is implemented using verilog and validated their functionality using their functional tables
+
+
